@@ -815,6 +815,29 @@ The energy meter does have 2 meters, one for incoming and outgoing power. If you
     1,77070100600100ff@#,Zählernummer,,meter_number,0
     #
     ```
+
+### DZG DWSB12.2 (SML)
+
+For `Inf on` (after entering the PIN code plus switching through the menu to alter 'Inf off' with a long light beam), the simplified dataset plus current power statistic is returned.
+The energy meter does have 2 meters, one for incoming and outgoing power. If you have a solar panel installed and you are delivering power to the network the second value will increase appropriately.
+   
+??? summary "Alternative script for the extended dataset"
+    ```
+    >D
+    >B
+    =>sensor53 r
+    >M 1
+    +1,3,s,16,9600,DWSB202
+    1,77070100010800ff@1000,Energie bezogen,kWh,energy,0
+    1,77070100020800ff@1000,Energie geliefert,kWh,energy,0
+    1,77070100100700ff@1,Aktuelle Leistung,W,power_curr,0
+    1,7707010060320101@#,Service ID,,meter_id,0
+    1,77010b0a01445a47@#,Unbekannt,,unknown,0
+    1,77070100600100ff@#,Zählernummer,,meter_number,0
+    #
+    ```
+	
+
 	
 ### EasyMeter Q3A / Apator APOX+ (SML)
 
